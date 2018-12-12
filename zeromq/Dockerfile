@@ -10,6 +10,7 @@ RUN cd /tmp && tar xf zeromq-4.2.5.tar.gz && cd zeromq-4.2.5 && ./configure && m
 FROM alpine
 
 MAINTAINER Galaxyobe Automated Build Project <galaxyobe@qq.com>
+LABEL version=v4.2.5
 
 COPY --from=builder /tmp/zeromq-4.2.5/src/libzmq.la /usr/local/lib
 COPY --from=builder /tmp/zeromq-4.2.5/src/.libs/libzmq.so.5.1.5 /usr/local/lib/libzmq.so.5.1.5
